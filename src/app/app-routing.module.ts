@@ -3,19 +3,31 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     loadChildren: () =>
-      import("./login/login.module").then((m) => m.LoginPageModule),
+      import('./login/login.module').then((m) => m.LoginPageModule),
   },
   {
-    path: "register",
+    path: 'register',
     loadChildren: () =>
-      import("./register/register.module").then((m) => m.RegisterPageModule),
+      import('./register/register.module').then((m) => m.RegisterPageModule),
   },
   {
-    path: "tabs",
+    path: 'menu',
     loadChildren: () =>
-      import("./tabs/tabs.module").then((m) => m.TabsPageModule),
+      import('./menu/menu.module').then((m) => m.MenuPageModule),
+  },
+  {
+    path: 'quiz',
+    loadChildren: () =>
+      import('./quiz/quiz.module').then((m) => m.QuizPageModule),
+  },
+  {
+    path: 'leaderboard',
+    loadChildren: () =>
+      import('./leaderboard/leaderboard.module').then(
+        (m) => m.LeaderboardPageModule
+      ),
   },
 ];
 @NgModule({

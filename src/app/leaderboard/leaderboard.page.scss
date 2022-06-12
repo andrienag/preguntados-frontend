@@ -1,0 +1,39 @@
+ion-card {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  height: 90%;
+  max-width: 1500px;
+}
+
+ion-list {
+  background: transparent !important;
+}
+
+ion-card-header {
+  padding: 0;
+  margin: 0;
+}
+
+ion-list-header {
+  font-size: 20px;
+}
+
+ion-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  --background: transparent !important;
+}
+
+ion-content {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.submit-button {
+  width: 80vw;
+  max-width: 500px;
+  margin: 7.5px;
+}
