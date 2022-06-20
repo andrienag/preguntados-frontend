@@ -9,9 +9,9 @@
   <ion-card>
     <ion-card-content>
       <ion-row>
-        <ion-chip color="secondary">
+        <ion-chip color="secondary" *ngIf="userData">
           <ion-icon name="person-circle-outline" color="dark"></ion-icon>
-          <ion-label color="dark">Marcos</ion-label>
+          <ion-label color="dark">{{ userData.name }}</ion-label>
         </ion-chip>
         <ion-chip color="secondary">
           <ion-icon name="sparkles-outline" color="primary"></ion-icon>

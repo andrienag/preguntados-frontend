@@ -1,31 +1,43 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: 'login',
     loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginPageModule),
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'register',
     loadChildren: () =>
-      import('./register/register.module').then((m) => m.RegisterPageModule),
+      import('./pages/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
   },
   {
     path: 'menu',
+    canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./menu/menu.module').then((m) => m.MenuPageModule),
+      import('./pages/menu/menu.module').then((m) => m.MenuPageModule),
   },
   {
     path: 'quiz',
+    canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./quiz/quiz.module').then((m) => m.QuizPageModule),
+      import('./pages/quiz/quiz.module').then((m) => m.QuizPageModule),
   },
   {
     path: 'leaderboard',
+    canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./leaderboard/leaderboard.module').then(
+      import('./pages/leaderboard/leaderboard.module').then(
         (m) => m.LeaderboardPageModule
       ),
   },

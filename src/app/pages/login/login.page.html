@@ -1,0 +1,52 @@
+<div
+  style="
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <ion-card>
+    <ion-card-content>
+      <ion-row *ngIf="error">
+        <ion-chip
+          color="danger"
+          style="margin-left: auto; margin-right: auto; height: auto"
+        >
+          <ion-icon
+            name="alert-circle-outline"
+            style="min-width: 4vw"
+          ></ion-icon>
+          <ion-label>{{ error }}</ion-label>
+        </ion-chip>
+      </ion-row>
+      <ion-item>
+        <ion-label position="stacked"> Email </ion-label>
+        <ion-input
+          color="primary"
+          placeholder="example@mail.com"
+          [(ngModel)]="email"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input
+          type="password"
+          color="primary"
+          placeholder="********"
+          [(ngModel)]="password"
+        ></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-row>
+        <ion-button class="submit-button" (click)="login()" [disabled]="loading"
+          >Login</ion-button
+        >
+      </ion-row>
+      <ion-row>
+        <a class="form-link" (click)="goToRegister()">Create an account</a>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</div>
